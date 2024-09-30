@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+</head>
+<body>
+<div class="chat-container">
+    <div class="sidebar">
+        <h3>Past Chats</h3>
+        <ul id="chat-list"></ul>
+    </div>
+    <div class="main-content">
+        <div class="header">
+            <h2 id="chat-title">New Chat</h2>
+            <div class="controls">
+                <select id="model-select">
+                    <option value="o1-mini">o1-mini</option>
+                    <option value="o1-preview">o1-preview</option>
+                    <option value="gpt-4o">gpt-4o</option>
+                    <option value="claude-3-5-sonnet-20240620">claude-3.5</option>
+                </select>
+                <button id="new-chat-btn">New Chat</button>
+            </div>
+        </div>
+        <div id="chat-box"></div>
+        <form id="chat-form">
+            <input type="text" id="message-input" placeholder="Type your message..." autocomplete="off" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
